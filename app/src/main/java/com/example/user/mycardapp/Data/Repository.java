@@ -1,13 +1,19 @@
 package com.example.user.mycardapp.Data;
 
-import android.support.annotation.NonNull;
+import java.util.List;
 
 import io.reactivex.Observable;
 
 public interface Repository {
 
-    Observable<NewsItem> getNews ();
+    Observable<NewsItem> getNews (String category);
 
-    void saveNewsToCache (@NonNull Observable<NewsItem> news);
+    NewsItem getOneNews (int id);
+
+    void saveAllNews (List<NewsItem> newsList , String category);
+
+    void deleteAll (String category);
+
+    void deleteOneNews (int id);
 
 }
